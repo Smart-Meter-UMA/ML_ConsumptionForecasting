@@ -1,5 +1,12 @@
 ### Machine Learning to forecast electricity consumption
 
-Files are provisionally found at this link
+## Deploy app
 
-https://drive.google.com/drive/folders/1T4KtdlGSl2ez2EZwjLJXN4JcFHS4Guei?usp=sharing
+kubect apply -f backend_deploy.yaml
+kubect apply -f backend_service.yaml
+kubect apply -f tfserving_deploy.yaml
+kubect apply -f tfserving_serving.yaml
+
+## Access the app once deployed
+
+http://localhost:5000

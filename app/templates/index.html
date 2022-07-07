@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block title %}Inicio{% endblock %}
+
+{% block head %}
+<meta id="consumption_data" data-consumption="{{consumption}}">
+<link rel="stylesheet" href="../static/css/indexStyles.css">
+<link rel="stylesheet" href="../static/css/circleProgress.css">
+<script defer src="../static/javascript/indexjs.js"></script>
+{% endblock %}
+
+{% block content %}
+<h1>Visualización de predicciones</h1>
+<div class="alert alert-danger" role="alert" id="alerta"></div>
+<div class="alert alert-info" role="alert" id="alertainfo"></div>
+<form id="formPred">
+    <div id='rowPred' class="row d-flex justify-content-center align-items-center border border-info rounded">
+        <div class="col-auto">
+            <label for="exampleFormControlSelect1">Tipo de entrada</label>
+            <select class="form-control form-select" id="selectEntrada" aria-label="Default select example" required>
+                <option selected disabled value="">---Elija el tipo de entrada de los datos---</option>
+                <option value="0">Solo valor</option>
+                <option value="1">Fecha y valor</option>
+            </select>
+        </div>
+        <div class="col-auto">
+            <label for="exampleFormControlSelect1">Tipo de predicci&oacute;n</label>
+            <select class="form-control form-select" id="selectPred" aria-label="Default select example" required>
+                <option selected disabled value="">---Elija el tipo de predicci&oacute;n---</option>
+                <option value="hour">Pr&oacute;xima hora</option>
+                <option value="day">Pr&oacute;ximas 24 horas (día)</option>
+                <option value="week">Pr&oacute;ximos 7 días (semana)</option>
+                <option value="month">Pr&oacute;ximos 30 días (mes)</option>
+            </select>
+        </div>
+        <div class="col-auto">
+            <label for="datePred">Desde la fecha</label>
+            <input id="datePred" class="form-control" type="date" required />
+        </div>
+        <div class="col-auto">
+            <label for="timePred">Desde la hora</label>
+            <input id="timePred" class="form-control" type="time" step="900" required />
+        </div>
+        <div class="col-auto d-flex align-items-end">
+            <button type="submit" id="submitbutton" class="btn btn-primary mt-4">Predecir</button>
+        </div>
+    </div>
+</form>
+
+<div class="d-flex align-items-center">
+    <div class="spinner-border text-primary" role="status" id="spinner"></div>
+</div>
+
+<div id="resultado">
+    <div id="blockline">
+        <canvas id="linechart"></canvas>
+    </div>
+
+    <div class="container">
+        <div class="row" id="circleProgress"></div>
+    </div>
+
+    <div id="blockbar">
+        <canvas id="barchart"></canvas>
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script type="text/javascript">
+    let stampmin = {{ datemin }}
+    let stampmax = {{ datemax }}
+</script>
+{% endblock %}

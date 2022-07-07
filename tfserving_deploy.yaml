@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: consumoserving
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: consumoserving
+  template:
+    metadata:
+      labels:
+        app: consumoserving
+    spec:
+      containers:
+      - name: consumoserving
+        image: yerayrs/consumo_serving:v1
+        ports:
+        - containerPort: 8501

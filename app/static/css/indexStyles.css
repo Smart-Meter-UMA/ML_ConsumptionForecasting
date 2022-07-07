@@ -1,0 +1,78 @@
+html {
+    min-height: 100%;
+}
+
+body {
+    min-height: 100%;
+    margin: 0;
+}
+
+footer {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 50px;
+}
+
+h3 {
+    text-align: center;
+}
+
+nav {
+    color: white;
+}
+
+#alerta {
+    margin: 20px auto 10px;
+    display: none;
+    width: 60%;
+    text-align: center;
+}
+
+#alertainfo {
+    margin: 20px auto -40px;
+    display: none;
+    width: 60%;
+    text-align: center;
+}
+
+#spinner {
+    margin: 30px auto 0;
+    display: none;
+    text-align: center;
+}
+
+#formPred {
+    margin: 50px auto 0;
+    width: 70%;
+}
+
+#rowPred {
+    min-height: 100px;
+}
+
+#blockline {
+    width: 80%;
+    margin: 50px auto 50px;
+}
+
+#blockbar {
+    width: 50%;
+    margin: 50px auto 50px;
+}
+
+#circleProgress {
+    margin: 0 auto;
+}
+
+.js-num {
+    display: inline-block;
+    font-size: 13vmin;
+    font-weight: bold;
+    padding: 0.5em;
+    font-family: monospace;
+}

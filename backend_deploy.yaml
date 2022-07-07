@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    name: backendconsumo
+  name: backendconsumo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: pod-backendconsumo
+  template:
+    metadata:
+      labels:
+        name: pod-backendconsumo
+      name: backendconsumo
+    spec:
+      containers:
+      - image: yerayrs/consumo_backend:v1
+        name: backendconsumo
+        ports:
+        - containerPort: 5000
+        imagePullPolicy: IfNotPresent
